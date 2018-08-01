@@ -1,9 +1,9 @@
 $(function() {
-    if (localStorage.notepad != undefined && localStorage.notepad != "[]"){
+    if (localStorage.notepad2 != undefined && localStorage.notepad2 != "[]"){
         var i = 1;
         var j = 0;
         var linha = 2;
-        var notas = JSON.parse(localStorage.getItem('notepad'));
+        var notas = JSON.parse(localStorage.getItem('notepad2'));
         var next;
 
         $('tr:last > td[info="nome"]').html(notas[0][0]);
@@ -104,10 +104,6 @@ function preencheTab() {
                 soma += parseFloat($(this).children().first().next().html());
             if (isNaN(parseInt($(this).children().first().next().next().html())) != true)
                 soma += parseFloat($(this).children().first().next().next().html());
-            if (isNaN(parseInt($(this).children().first().next().next().next().html())) != true)
-                soma += parseFloat($(this).children().first().next().next().next().html());
-            if (isNaN(parseInt($(this).children().first().next().next().next().next().html())) != true)
-                soma += parseFloat($(this).children().first().next().next().next().next().html());
             $('tr[linha="' + linha + '"] > td[info="falta"]').html(14 - soma > 0 ? Math.round((14 - soma) * 10) / 10 : 0);
             $('tr[linha="' + linha + '"] > td[info="exame"]').html(14 - soma > 0 ? Math.ceil(((5 - (soma / 2 * 0.6)) / 0.4) * 10) / 10 : '---');
         }
