@@ -9,15 +9,11 @@ $(function() {
         $('tr:last > td[info="nome"]').html(notas[0][0]);
         $('tr:last > td[info="nota1"]').html(notas[0][1]);
         $('tr:last > td[info="nota2"]').html(notas[0][2]);
-        $('tr:last > td[info="nota3"]').html(notas[0][3]);
-        $('tr:last > td[info="nota4"]').html(notas[0][4]);
         while (notas.length > i) {
             next = $('<tr linha="' + linha + '"></tr>');
             next.append('<td info="nome">'+notas[i][j++]+'</td>');
             next.append('<td info="nota1">'+notas[i][j++]+'</td>');
-            next.append('<td info="nota2">'+notas[i][j++]+'</td>');
-            next.append('<td info="nota3">'+notas[i][j++]+'</td>');
-            next.append('<td info="nota4">'+notas[i++][j++]+'</td>');
+            next.append('<td info="nota2">'+notas[i++][j++]+'</td>');
             next.append('<td info="falta">---</td>');
             next.append('<td info="exame">---</td>');
             $('table').append(next);
@@ -92,8 +88,6 @@ function addLinha() {
     <td info="nome">---</td>
     <td info="nota1">---</td>
     <td info="nota2">---</td>
-    <td info="nota3">---</td>
-    <td info="nota4">---</td>
     <td info="falta">---</td>
     <td info="exame">---</td>
   </tr>`);
@@ -114,8 +108,8 @@ function preencheTab() {
                 soma += parseFloat($(this).children().first().next().next().next().html());
             if (isNaN(parseInt($(this).children().first().next().next().next().next().html())) != true)
                 soma += parseFloat($(this).children().first().next().next().next().next().html());
-            $('tr[linha="' + linha + '"] > td[info="falta"]').html(28 - soma > 0 ? Math.round((28 - soma) * 10) / 10 : 0);
-            $('tr[linha="' + linha + '"] > td[info="exame"]').html(28 - soma > 0 ? Math.ceil(((5 - (soma / 4 * 0.6)) / 0.4) * 10) / 10 : '---');
+            $('tr[linha="' + linha + '"] > td[info="falta"]').html(14 - soma > 0 ? Math.round((14 - soma) * 10) / 10 : 0);
+            $('tr[linha="' + linha + '"] > td[info="exame"]').html(14 - soma > 0 ? Math.ceil(((5 - (soma / 2 * 0.6)) / 0.4) * 10) / 10 : '---');
         }
     });
     var global = []
