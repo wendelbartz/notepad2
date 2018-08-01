@@ -1,0 +1,29 @@
+html, body, body>div {
+    height: 100%;
+    width: 100%;
+}
+
+*, h1 {
+    color: rgb(255, 255, 255);
+}
+
+body {
+    background-color: #6074ff;
+    padding: 20px;
+}
+
+table {
+    position: absolute;
+    vertical-align: middle;
+}
+
+table, th, tr, td {
+    border-style: solid;
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+
+th {
+    text-align: center;
+}
