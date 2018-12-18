@@ -123,5 +123,5 @@ function preencheTab() {
         if (fix.length > 2)
             global[global.length] = fix
     });
-    localStorage.setItem('notepad', JSON.stringify(global));
+    localStorage.setItem('notepad2', JSON.stringify(global));
 };
